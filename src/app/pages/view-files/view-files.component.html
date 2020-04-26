@@ -1,0 +1,33 @@
+<nb-card>
+  <nb-card-header>
+    Arquivos
+  </nb-card-header>
+  <nb-card-body>
+    <div class="container">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Tamanho</th>
+            <th>Data</th>
+            <th style="padding-left: 25px;">Opções</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of Files">
+            <td>{{ item.name }}</td>
+            <td>{{ item.size }}</td>
+            <td>{{ item.createdAt }}</td>
+            <td>
+            <nb-actions style="color: black" size="small">
+              <nb-action style="color: black" icon="cloud-download" (click)="downloadFile(item.key, item.name)" title="Download arquivo"></nb-action>
+              <nb-action style="color: black" icon="trash-2" [routerLink]="['/pages/upload']"
+                (click)="delet(item.key)" title="Remover arquivo"></nb-action>
+            </nb-actions>
+          </td>
+          </tr>        
+        </tbody>
+      </table>
+    </div>
+  </nb-card-body>
+</nb-card>

@@ -1,0 +1,17 @@
+<nb-card>
+    <nb-card-header>Upload</nb-card-header>
+    <nb-card-body>
+
+        <div class="row full-name-inputs">
+            <div class="col-sm-6 input-group">
+                <label>Selecione um arquivo</label>
+                <input type="file" name="file" #fileInput (change)="onChange(fileInput.files[0])"
+                nbInput fullWidth><button nbButton (click)="onUpload(imageUrl)">Upload</button>
+                <div>
+                    <img style="width: 50%;" src="{{ imageUrl }}" alt="">
+                </div>
+            </div>
+        </div>
+
+    </nb-card-body>
+</nb-card>
