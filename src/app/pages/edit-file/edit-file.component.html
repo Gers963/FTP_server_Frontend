@@ -1,0 +1,19 @@
+<nb-card>
+    <nb-card-header>Editar arquivo</nb-card-header>
+    <nb-card-body>
+
+        <div class="row full-name-inputs">
+            <div class="col-sm-6 input-group">
+                <div style="display: flex; justify-content: center; width: 250%;">
+                    <input type="text" name="name" #Name (change)="onChange(Name.value)" value="{{ arquivo.name }}" nbInput
+                        fullWidth />
+                    <button nbButton style="margin-left: 5%;" (click)="updateFile()">Renomear</button>
+                </div>
+                <div style="margin-top: 5%;">
+                    <img style="width: 50%;" src="{{ arquivo.arquivo }}" alt="">
+                </div>
+            </div>
+        </div>
+
+    </nb-card-body>
+</nb-card>

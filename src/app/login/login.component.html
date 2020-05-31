@@ -1,0 +1,11 @@
+<div style="margin-left: 10%; margin-bottom: 30%; padding-left: -40%;">
+    <h1>Login FTP Server</h1>
+    <div style="flex-direction: column;">
+        <label>Email</label><input type="text" name="email" #Email (change)="onChangeEmail(Email.value)" class="input-group"/>
+        <label>Senha</label><input type="password" name="password" #Password (change)="onChangePassword(Password.value)" class="input-group"/>
+    </div>
+    <div>
+        <button class="buttons-style" (click)="login()"><h6 style="color: aliceblue;">Entrar</h6></button>
+        <a href="/auth/register" style="margin-left: 50%;"><label style="color: black;">Registrar-se</label></a>
+    </div>
+</div>

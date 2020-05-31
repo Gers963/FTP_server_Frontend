@@ -55,4 +55,8 @@ export class ViewFilesComponent implements OnInit {
     })
   }
 
+  getFile(id){
+    this.service.setId(id)
+  }
+
 }

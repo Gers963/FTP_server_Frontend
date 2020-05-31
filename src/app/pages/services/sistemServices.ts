@@ -20,6 +20,25 @@ export class UploadService {
   }
   */
 
+  private id;
+
+  getId(){
+    return this.id
+  }
+
+  setId(id: any){
+    this.id = id
+  }
+
+  getFile(id: any){
+    return fetch(`${Base.Base_URL}get/file/${id}`, {
+      method: "GET"
+    })
+    .then(response => {
+      return response.json()
+    })
+  }
+
   deletUser(id: any) {
     return fetch(`${Base.Base_URL}delet/file/${id}`, {
       method: "DELETE"
@@ -38,9 +57,10 @@ export class UploadService {
     })
   }
 
-  uploadFile(file: File) {
+  uploadFile(file: File, image) {
     const formData = new FormData()
     formData.append('file', file)
+    formData.append('imagem', image)
     return fetch(`${Base.Base_URL}add/file`, {
       method: "POST",
       body: formData,
@@ -53,6 +73,48 @@ export class UploadService {
   getFiles() {
     return fetch(`${Base.Base_URL}list/file`, {
       method: "GET"
+    })
+    .then(response => {
+      return response.json()
+    })
+  }
+
+  updateFile(newName: any, id: any){
+    const formData = new FormData()
+    formData.append('name', newName)
+    return fetch(`${Base.Base_URL}update/file/${id}`, {
+      method: "POST",
+      headers: {
+        name: newName
+      }
+    })
+    .then(response => {
+      return response.json()
+    })
+  }
+
+  register(name: any, email: any, password: any){
+    return fetch(`${Base.Base_URL}api/register`, {
+      method: "POST",
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({name: name, email: email, password: password})
+    })
+    .then(response => {
+      return response.json()
+    })
+  }
+
+  login(email: any, password: any){
+    return fetch(`${Base.Base_URL}api/login`, {
+      method: "POST",
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({email: email, password: password})
     })
     .then(response => {
       return response.json()

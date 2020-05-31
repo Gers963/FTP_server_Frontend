@@ -10,7 +10,8 @@
 <div class="header-container">
   <nb-actions size="small">
     <nb-action class="user-action" *nbIsGranted="['view', 'user']" >
-      <a style="text-size-adjust: 50px;" href="#" >Sair</a>
+      <h6 style="margin-right: 30px; margin-top: 10px;">{{ userName }}</h6>
+      <a style="text-size-adjust: 50px;" href="#" (click)="logOut()">Sair</a>
     </nb-action>
   </nb-actions>
 </div>

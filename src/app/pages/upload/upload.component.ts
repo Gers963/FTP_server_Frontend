@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { UploadService } from '../services/sistemServices';
 import { Base } from '../../config/base';
+import imageToBase64 from 'image-to-base64';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'ngx-upload',
@@ -13,12 +15,16 @@ export class UploadComponent implements OnInit {
   file: File;
   public imageUrl: string | ArrayBuffer;
 
-  constructor(private UploadService: UploadService) { }
+  constructor(private UploadService: UploadService, private router: Router,) { }
 
   ngOnInit() {
+    if(localStorage.getItem('@token')){
+      this.router.navigate(['/auth']);
+    }
   }
 
   onChange(file: File) {
+
     if (file) {
       this.fileName = file.name;
       this.file = file;
@@ -33,7 +39,7 @@ export class UploadComponent implements OnInit {
   }
 
   onUpload() {
-    this.UploadService.uploadFile(this.file)
+    this.UploadService.uploadFile(this.file, this.imageUrl)
       .then(() => {
         alert('Arquivo enviado com sucesso!!!')
       })

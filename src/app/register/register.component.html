@@ -1,0 +1,11 @@
+<div style="margin-left: 10%; margin-bottom: 30%; padding-left: -40%;">
+    <h1>Criar usuário</h1>
+    <div style="flex-direction: column;">
+        <label>Nome</label><input type="text" name="name" #Name (change)="onChangeName(Name.value)" class="input-group"/>
+        <label>Email</label><input type="text" name="email" #Email (change)="onChangeEmail(Email.value)" class="input-group"/>
+        <label>Senha</label><input type="password" name="password" #Password (change)="onChangePassword(Password.value)" class="input-group"/>
+    </div>
+    <div>
+        <button class="buttons-style" (click)="submit()"><h6 style="color: aliceblue;">Criar</h6></button>
+    </div>
+</div>

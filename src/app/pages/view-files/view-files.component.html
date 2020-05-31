@@ -23,6 +23,8 @@
               <nb-action style="color: black" icon="cloud-download" (click)="downloadFile(item.key, item.name)" title="Download arquivo"></nb-action>
               <nb-action style="color: black" icon="trash-2" [routerLink]="['/pages/upload']"
                 (click)="delet(item.key)" title="Remover arquivo"></nb-action>
+              <nb-action style="color: black" icon="edit-2" [routerLink]="['/pages/edit-file']"
+                (click)="getFile(item._id)" title="Editar arquivo"></nb-action>
             </nb-actions>
           </td>
           </tr>        
