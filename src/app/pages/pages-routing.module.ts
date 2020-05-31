@@ -7,6 +7,7 @@ import { ECommerceComponent } from './e-commerce/e-commerce.component';
 import { NotFoundComponent } from './miscellaneous/not-found/not-found.component';
 import { UploadComponent } from './upload/upload.component';
 import { ViewFilesComponent } from './view-files/view-files.component';
+import { EditFileComponent } from './edit-file/edit-file.component';
 
 const routes: Routes = [{
   path: '',
@@ -19,6 +20,10 @@ const routes: Routes = [{
     {
       path: 'view-files',
       component: ViewFilesComponent,
+    },
+    {
+      path: 'edit-file',
+      component: EditFileComponent,
     },
     {
       path: 'dashboard',
@@ -80,7 +85,7 @@ const routes: Routes = [{
     },
     {
       path: '',
-      redirectTo: 'dashboard',
+      redirectTo: 'upload',
       pathMatch: 'full',
     },
     {

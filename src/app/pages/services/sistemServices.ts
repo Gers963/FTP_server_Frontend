@@ -58,9 +58,11 @@ export class UploadService {
   }
 
   uploadFile(file: File, image) {
+    var token = localStorage.getItem('@token')
     const formData = new FormData()
     formData.append('file', file)
     formData.append('imagem', image)
+    formData.append('token', token)
     return fetch(`${Base.Base_URL}add/file`, {
       method: "POST",
       body: formData,
@@ -71,7 +73,8 @@ export class UploadService {
   }
 
   getFiles() {
-    return fetch(`${Base.Base_URL}list/file`, {
+    var token = localStorage.getItem('@token');
+    return fetch(`${Base.Base_URL}list/file/${token}`, {
       method: "GET"
     })
     .then(response => {

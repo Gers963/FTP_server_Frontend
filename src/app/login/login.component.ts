@@ -41,7 +41,7 @@ export class LoginComponent implements OnInit {
           localStorage.setItem('@token', respose.token);
           localStorage.setItem('@name', respose.name);
           this.router.navigate(['./pages/upload']);
-        }else if(respose.error == "Invalid password"){
+        }else if(respose.error){
           alert("senha incorreta")
         }
       })

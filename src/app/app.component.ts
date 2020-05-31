@@ -17,12 +17,7 @@ export class AppComponent implements OnInit {
   constructor(private analytics: AnalyticsService, private seoService: SeoService, private router: Router) {
   }
 
-  ngOnInit(): void {  
-    if(localStorage.getItem('@token')){
-      this.router.navigate(['./pages/upload']);
-    } else {
-      this.router.navigate(['/auth']);
-    }
+  ngOnInit(): void {
     this.analytics.trackPageViews();
     this.seoService.trackCanonicalChanges();
   }

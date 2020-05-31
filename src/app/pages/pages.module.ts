@@ -12,6 +12,7 @@ import { Ng2SmartTableModule } from 'ng2-smart-table';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ModalOverlaysModule } from './modal-overlays/modal-overlays.module';
 import { ViewFilesComponent } from './view-files/view-files.component';
+import { EditFileComponent } from './edit-file/edit-file.component';
 
 @NgModule({
   imports: [
@@ -40,7 +41,8 @@ import { ViewFilesComponent } from './view-files/view-files.component';
   declarations: [
     PagesComponent,
     UploadComponent,
-    ViewFilesComponent
+    ViewFilesComponent,
+    EditFileComponent
   ],
 })
 export class PagesModule {

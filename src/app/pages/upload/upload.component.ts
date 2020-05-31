@@ -17,8 +17,9 @@ export class UploadComponent implements OnInit {
 
   constructor(private UploadService: UploadService, private router: Router,) { }
 
-  ngOnInit() {
-    if(localStorage.getItem('@token')){
+  async ngOnInit() {
+    var token = await localStorage.getItem('@token');
+    if(!token){
       this.router.navigate(['/auth']);
     }
   }
